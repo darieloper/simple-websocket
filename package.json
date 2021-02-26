@@ -1,0 +1,21 @@
+{
+  "name": "simple-websocket",
+  "version": "1.0.0",
+  "description": "Simple WebSocket Server",
+  "main": "index.js",
+  "dependencies": {
+    "ws": "^7.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "websocket",
+    "ws",
+    "node",
+    "communication"
+  ],
+  "author": "Dariel Ramos",
+  "license": "ISC"
+}
