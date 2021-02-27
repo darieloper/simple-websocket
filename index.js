@@ -16,7 +16,7 @@ wss.on('connection', ws => {
   ws.on('message', message => {
     const decoded = JSON.parse(message)
     console.log(`Received message => ${decoded.message}`)
-    wss.clients.forEach(client => client.send(JSON.stringify({type: 'message', data: decoded.message, uuid: decoded.uuid})))
+    wss.clients.forEach(client => client.send(JSON.stringify({type: 'message', data: decoded.data, uuid: decoded.uuid})))
   })
 
   ws.on('close', function (client) {
