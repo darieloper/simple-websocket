@@ -12,10 +12,11 @@ wss.getUniqueID = function () {
 
 wss.on('connection', ws => {
   ws.id = wss.getUniqueID();
-  
+
   ws.on('message', message => {
-    console.log(`Received message => ${message}`)
-    wss.clients.forEach(client => client.send(JSON.stringify({type: 'message', data: message})))
+    const decoded = JSON.parse(message)
+    console.log(`Received message => ${decoded.message}`)
+    wss.clients.forEach(client => client.send(JSON.stringify({type: 'message', data: decoded.message, uuid: decoded.uuid})))
   })
 
   ws.on('close', function (client) {
